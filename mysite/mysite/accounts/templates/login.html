@@ -3,7 +3,7 @@
 {% block content %}
 	
 	{% if form.errors %}
-	<p class="error">抱歉, 這不是正確的帳號或密碼!</p>
+	<p class="error">抱歉, 帳號或密碼有不合法字元</p>
 	{% endif %}
 
 	<form action = "/accounts/auth" method="post">
