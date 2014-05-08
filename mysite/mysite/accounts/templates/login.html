@@ -1,16 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-	
+
 	{% if form.errors %}
 	<p class="error">抱歉, 帳號或密碼有不合法字元</p>
 	{% endif %}
 
-	<form action = "/accounts/auth" method="post">
+	<form action = "/accounts/auth/" method="post">
 	{% csrf_token %}
 	<label for="username">使用者帳號: </label>
 	<input type="text" name="username" value="" id="username"/>
 	<label for="password">使用者密碼: </label>
+	<input type="password" name="password" value="" id="password"/>
 	<input type="submit" value="登入"/>
 	</form>
 

@@ -7,4 +7,6 @@ urlpatterns = patterns('mysite.accounts.views',
 	url(r'^logout/$', 'logout'),
 	url(r'^loggedin/$', 'loggedin'),
 	url(r'^invalid/$', 'invalid_login'),
+	url(r'^register/$', 'register_user'),
+	url(r'^register_success/$', 'register_success'),
 )
