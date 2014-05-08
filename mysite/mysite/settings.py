@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '5^)802o#dr_=lx-dz95n^k8uck6y8vo&ja^3z*%ey7#fs_ap@h'
+SECRET_KEY = 'n+gj2sy125!8p%pn3xh)l3n!+m*60=@dud04-^wu$(s)%qmro0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -51,10 +51,6 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'mysite.urls'
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
-
-TEMPLATE_DIRS = (
-    '/home/python/Desktop/mysite/templates',
-)
 
 
 # Database
