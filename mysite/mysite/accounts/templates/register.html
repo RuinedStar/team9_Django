@@ -4,7 +4,8 @@
 <h2>註冊新帳號</h2>
 <form action="/accounts/register/" method="post">
 {% csrf_token %}
-{{ form }}
+
+{{ form.as_p }}
 <input type="submit" value="送出"/>
 </form>
 
