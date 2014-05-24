@@ -10,6 +10,9 @@
 {% block content %}
 
 <h1>{{ article.title }}</h1>
+<h4>{{ article.pub_date}}</h4>
 <p>{{ article.body }}</p>
+<p>{{ article.likes }} 個人按讚</p>
+<p><a href="/articles/like/{{ article.id }}">按讚</a></p>
 
 {% endblock %}
