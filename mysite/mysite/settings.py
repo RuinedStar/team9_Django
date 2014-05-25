@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'mysite.article',
     'mysite.accounts',
+    'mysite.Cachapon',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -82,3 +83,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = 'D:/GitHubClone/team9_Django/mysite/media/'
+MEDIA_URL = '/media/'
