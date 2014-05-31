@@ -39,7 +39,6 @@ INSTALLED_APPS = (
     'mysite.article',
     'mysite.accounts',
     'mysite.Cachapon',
-    'mysite.userprofile',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -93,5 +92,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
 MEDIA_URL = '/media/'
-
-AUTH_PROFILE_MODULE = 'mysite.userprofile.UserProfile'

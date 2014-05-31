@@ -9,7 +9,6 @@ urlpatterns = patterns('',
 
     url(r'^articles/', include('mysite.article.urls')),
     url(r'^accounts/', include('mysite.accounts.urls')),
-    url(r'^accounts/profile/', include('mysite.userprofile.urls')),
     url(r'^Cachapon/', include('mysite.Cachapon.urls')),
     url(r'^admin/', include(admin.site.urls)),
     # Examples:
