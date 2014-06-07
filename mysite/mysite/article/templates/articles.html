@@ -7,8 +7,8 @@
 {% for article in articles %}
 <div>
     <h2><a href="/articles/get/{{ article.id }}/">{{  article.title }}</a></h2>
-    <h4>{{ article.pub_date}}　　{{ article.likes }} 按讚</p></h4>
-    <p>{{ article.body|lower|truncatewords:"8" }}</p>
+    <h4>{{ article.pub_date }}　　{{ article.likes }} 按讚</p></h4>
+    <p>{{ article.body }}</p>
 
 </div>
 {% endfor %}

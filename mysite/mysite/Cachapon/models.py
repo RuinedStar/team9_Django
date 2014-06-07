@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class ImageTest(models.Model):
@@ -33,3 +34,11 @@ class Skill(models.Model):
 
 	def __unicode__(self):
 	    return self.name
+
+class Record(models.Model):
+	player = models.ForeignKey(User)
+	pet = models.ForeignKey('Pet')
+	date = models.DateField()
+
+	def __unicode__(self):
+		return self.player.username + ": " + self.pet.name
