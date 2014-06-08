@@ -41,4 +41,4 @@ class Record(models.Model):
 	date = models.DateField()
 
 	def __unicode__(self):
-		return self.player.username + ": " + self.pet.name
+		return self.pet.icon
