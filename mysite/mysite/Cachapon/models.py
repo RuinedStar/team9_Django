@@ -3,8 +3,6 @@ from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 # Create your models here.
-class ImageTest(models.Model):
-    image1 = models.ImageField(upload_to='Cachapon/images/')
 
 class Pet(models.Model):
 
@@ -40,9 +38,11 @@ class Record(models.Model):
 	player = models.ForeignKey(User)
 	pet = models.ForeignKey('Pet')
 	date = models.DateField()
-
+	
+	'''
 	def __unicode__(self):
 		return self.pet.icon
+	'''
 
 class Prize(models.Model):
 	pet = models.ForeignKey('Pet')
