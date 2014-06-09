@@ -38,14 +38,17 @@ class Record(models.Model):
 	player = models.ForeignKey(User)
 	pet = models.ForeignKey('Pet')
 	date = models.DateField()
+
 	
-	'''
 	def __unicode__(self):
-		return self.pet.icon
-	'''
+		return self.player.username + " : " + self.pet.name
+	
 
 class Prize(models.Model):
 	pet = models.ForeignKey('Pet')
 	weight = models.IntegerField(validators=[MinValueValidator(1),
 		                                     MaxValueValidator(100)])
 	godfest = models.BooleanField(default = False)
+
+	def __unicode__(self):
+		return self.pet.name + " : " + str(self.weight)
