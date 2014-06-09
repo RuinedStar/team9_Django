@@ -5,8 +5,8 @@ from django.core.context_processors import csrf
 from mysite.Cachapon.models import Record, Prize
 from datetime import datetime
 
-def ImageTest(request):
-    return render_to_response('test.html')
+def Home(request):
+    return render_to_response('index.html')
 
 @login_required(login_url='/accounts/login/')
 def LookYourBag(request):
