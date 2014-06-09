@@ -4,4 +4,5 @@ urlpatterns = patterns('mysite.Cachapon.views',
 
 	url(r'^$', 'ImageTest'),
 	url(r'^bag/$','LookYourBag'),
+	url(r'^cacha/$','CachaEgg'),
 )

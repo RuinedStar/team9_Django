@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 # Create your models here.
 class ImageTest(models.Model):
@@ -42,3 +43,9 @@ class Record(models.Model):
 
 	def __unicode__(self):
 		return self.pet.icon
+
+class Prize(models.Model):
+	pet = models.ForeignKey('Pet')
+	weight = models.IntegerField(validators=[MinValueValidator(1),
+		                                     MaxValueValidator(100)])
+	godfest = models.BooleanField(default = False)

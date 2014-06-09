@@ -1,5 +1,5 @@
 from django.contrib import admin
-from mysite.Cachapon.models import ImageTest, Pet, Skill, Record
+from mysite.Cachapon.models import ImageTest, Pet, Skill, Record, Prize
 
 # Register your models here.
 
@@ -10,3 +10,4 @@ admin.site.register(ImageTest)
 admin.site.register(Pet, AuthDisplay)
 admin.site.register(Skill)
 admin.site.register(Record)
+admin.site.register(Prize)
