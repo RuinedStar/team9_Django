@@ -37,9 +37,13 @@
 		    <div class="collapse navbar-collapse" id="NAVBAR-COLL">
 		      <ul class="nav navbar-nav">
 		        <li class="active"><a href="/Cachapon/"><span class="glyphicon glyphicon-home"></span>　ホーム</a></li>
-		        <li><a href="gacha"><span class="glyphicon glyphicon-gift"></span>　ガチャ</a></li>
-		        <li><a href="shop"><span class="glyphicon glyphicon-usd"></span>　ショップ</a></li>
-		        <li><a href="/Cachapon/box/"><span class="glyphicon glyphicon-briefcase"></span>　BOX</a></li>
+		        
+		        {% block navigationBar %}
+		        	<li><a href="gacha"><span class="glyphicon glyphicon-gift"></span>　ガチャ</a></li>
+		        	<li><a href="shop"><span class="glyphicon glyphicon-usd"></span>　ショップ</a></li>
+		        	<li><a href="/Cachapon/box/"><span class="glyphicon glyphicon-briefcase"></span>　BOX</a></li>	
+		        {% endblock navigationBar %}
+
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
 		        <li class="dropdown">

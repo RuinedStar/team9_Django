@@ -17,11 +17,17 @@ def auth_view(request):
 	password = request.POST.get('password', '')
 	user = auth.authenticate(username=username, password=password)
 
+	errorMsg = ''
+
 	if user is not None:
 		auth.login(request, user)
 		return HttpResponseRedirect('/accounts/loggedin')
 	else:
-		return HttpResponseRedirect('/accounts/invalid')
+		errorMsg = 'Your username and password combination was not correct. Please try again.'
+		c = {}
+		c.update(csrf(request))
+		c['errorMsg'] = errorMsg
+		return render_to_response('login.html', c)
 
 def loggedin(request):
 	return render_to_response('loggedin.html',

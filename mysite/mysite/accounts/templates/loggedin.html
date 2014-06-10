@@ -1,6 +1,8 @@
-{% extends "base.html" %}
+{% extends "Cachapon/base.html" %}
 
-{% block content %}
-<h2>Hi {{full_name}} 現在你已經登入了!</h2>
-<p><a href="/accounts/logout/">點擊這裡登出</a></p>
-{% endblock %}
+{% block container %}
+<div class="container">
+	<h2>Hi {{full_name}} 現在你已經登入了!</h2>
+	<p><a href="/accounts/logout/">點擊這裡登出</a></p>
+</div>
+{% endblock container %}

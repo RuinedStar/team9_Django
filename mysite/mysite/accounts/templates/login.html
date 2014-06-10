@@ -1,18 +1,23 @@
-{% extends "base.html" %}
+{% extends "Cachapon/base.html" %}
 
-{% block content %}
+{% block container %}
 
-	{% if form.errors %}
-	<p class="error">抱歉, 帳號或密碼有不合法字元</p>
-	{% endif %}
+	<div class="container">
 
-	<form action = "/accounts/auth/" method="post">
-	{% csrf_token %}
-	<label for="username">使用者帳號: </label>
-	<input type="text" name="username" value="" id="username"/>
-	<label for="password">使用者密碼: </label>
-	<input type="password" name="password" value="" id="password"/>
-	<input type="submit" value="登入"/>
-	</form>
+		<p>{{ errorMsg }}</p>
 
-{% endblock %}
+		<form role="form" action = "/accounts/auth/" method="post">
+			{% csrf_token %}
+		 	<div class="form-group">
+		    	<label for="account">Account</label>
+		    	<input type="text"  class="form-control" name="username" id="account" placeholder="Enter account">
+		  	</div>
+		  	<div class="form-group">
+		    	<label for="password">Password</label>
+		    	<input type="password" class="form-control" name="password" id="password" placeholder="Enter Password">
+		  	</div>
+		  	<button type="submit" class="btn btn-primary">Login</button>
+		</form>
+	</div>	
+{% endblock container %}
+
