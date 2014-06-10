@@ -39,7 +39,6 @@ class Record(models.Model):
 	pet = models.ForeignKey('Pet')
 	date = models.DateField()
 
-	
 	def __unicode__(self):
 		return self.player.username + " : " + self.pet.name
 	

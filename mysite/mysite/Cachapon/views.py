@@ -6,12 +6,17 @@ from mysite.Cachapon.models import Record, Prize
 from datetime import datetime
 
 def Home(request):
-    return render_to_response('index.html')
+    return render_to_response('Cachapon/index.html')
 
 @login_required(login_url='/accounts/login/')
-def LookYourBag(request):
+def LookYourBox(request):
 	records = Record.objects.filter(player = request.user)
-	return render_to_response('bag.html', {'records' : records })
+	pets = []
+	for record in records:
+		icon_url = "/media/" + str(record.pet.icon)
+		pets.append(icon_url)
+
+	return render_to_response('Cachapon/box.html', {'pets' : pets })
 
 @login_required(login_url='/accounts/login/')
 def CachaEgg(request):
@@ -23,4 +28,4 @@ def CachaEgg(request):
 		return HttpResponseRedirect('/Cachapon/bag/')
 	c = {}
 	c.update(csrf(request))
-	return render_to_response('cacha.html', c)
+	return render_to_response('Cachapon/gacha.html', c)

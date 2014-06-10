@@ -1,0 +1,32 @@
+{% extends "Cachapon/base.html" %}
+{% block container %}
+	<div class="container">
+		<div>
+			<table>
+				{% for pet in pets %}
+
+					{% if forloop.counter0|divisibleby:6 %}
+						<tr>
+					{% endif %}
+
+					<td style="padding-right:30px; padding-bottom:30px;">
+						<a class="pop" data-toggle="popover" data-placement="top" data-content="No content">
+							<img src="{{ pet }}" class="img-responsive" title="聖煌天の麒麟・サクヤ"/>
+						</a>
+					</td>
+
+
+					{% if forloop.counter|divisibleby:6 %}
+						</tr>
+					{% endif %}	
+				{% endfor %}
+			</table>
+		</div>
+
+	</div>
+
+	{% block script %}
+		<script type="text/javascript">$(".pop").popover(); </script>
+	{% endblock script %}
+	
+{% endblock container %}

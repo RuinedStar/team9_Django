@@ -1,8 +1,7 @@
-from django.conf.urls import patterns, include, url
-
+from django.conf.urls import patterns, url
 urlpatterns = patterns('mysite.Cachapon.views',
 
 	url(r'^$', 'Home'),
-	url(r'^bag/$','LookYourBag'),
+	url(r'^box/$','LookYourBox'),
 	url(r'^cacha/$','CachaEgg'),
 )
