@@ -33,17 +33,16 @@
 		      <a class="navbar-brand" href="#">パズガチャ</a>
 		    </div>
 
-		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <!-- Collect the nav links, forms, and other content for toggling
+		          class="active" -->
 		    <div class="collapse navbar-collapse" id="NAVBAR-COLL">
 		      <ul class="nav navbar-nav">
-		        <li class="active"><a href="/Cachapon/"><span class="glyphicon glyphicon-home"></span>　ホーム</a></li>
-		        
-		        {% block navigationBar %}
+				{% block navigationBar %}
+		        	<li><a href="/Cachapon/"><span class="glyphicon glyphicon-home"></span>　ホーム</a></li>
 		        	<li><a href="gacha"><span class="glyphicon glyphicon-gift"></span>　ガチャ</a></li>
 		        	<li><a href="shop"><span class="glyphicon glyphicon-usd"></span>　ショップ</a></li>
 		        	<li><a href="/Cachapon/box/"><span class="glyphicon glyphicon-briefcase"></span>　BOX</a></li>	
 		        {% endblock navigationBar %}
-
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
 		        <li class="dropdown">
@@ -71,7 +70,7 @@
 
 		<script type="text/javascript" src= "{% static "jquery/jquery-1.11.1.min.js" %}"></script>
 		<script type="text/javascript" src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
-
+		<script type="text/javascript" src="{% static "js/navbar.js" %}"></script>
 		{% block script %}
 		{% endblock script %}
 	</body>
