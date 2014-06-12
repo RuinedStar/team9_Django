@@ -31,8 +31,6 @@ def Shop(request):
 
 	c = {}
 	c.update(csrf(request))
-	#c["stones"] = request.user.
-	
 	return render_to_response('Cachapon/shop.html', c)
 
 @login_required(login_url='/accounts/login/')
