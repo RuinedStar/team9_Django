@@ -9,16 +9,6 @@ def Home(request):
     return render_to_response('Cachapon/index.html')
 
 @login_required(login_url='/accounts/login/')
-def LookYourBox(request):
-	records = Record.objects.filter(player = request.user)
-	pets = []
-	for record in records:
-		icon_url = "/media/" + str(record.pet.icon)
-		pets.append(icon_url)
-
-	return render_to_response('Cachapon/box.html', {'pets' : pets })
-
-@login_required(login_url='/accounts/login/')
 def CachaEgg(request):
 
 	if request.method == 'POST':
@@ -28,4 +18,21 @@ def CachaEgg(request):
 		return HttpResponseRedirect('/Cachapon/bag/')
 	c = {}
 	c.update(csrf(request))
-	return render_to_response('Cachapon/gacha.html', c)
+	return render_to_response('Cachapon/cacha.html', c)
+
+@login_required(login_url='/accounts/login/')
+def Shop(request):
+	c = {}
+	c.update(csrf(request))
+	c["stones"] = request.POST.get("stone")
+	return render_to_response('Cachapon/shop.html', c)
+
+@login_required(login_url='/accounts/login/')
+def LookYourBox(request):
+	records = Record.objects.filter(player = request.user)
+	pets = []
+	for record in records:
+		icon_url = "/media/" + str(record.pet.icon)
+		pets.append(icon_url)
+
+	return render_to_response('Cachapon/box.html', {'pets' : pets })
