@@ -1,13 +1,35 @@
-{% extends "base.html" %}
+{% extends "Cachapon/base.html" %}
 
-{% block content %}
-<h2>註冊新帳號</h2>
-<form action="/accounts/register/" method="post">
-{% csrf_token %}
+{% block container %}
 
-{{ form.as_p }}
+<div class="container">
+	<form role="form" action="/accounts/register/" method="post" class="col-lg-6 col-lg-offset-2">
+		{% csrf_token %}
 
-<input type="submit" value="送出"/>
-</form>
+		<h3>Register new account!</h3><br>
+		<div class="form-group">
+			<label>Account</label>
+			<input class="form-control" type="password" name="username" placeholder="Enter account">
+		</div>
 
-{% endblock %}
+		<div class="form-group">
+			<label>Password</label>
+			<input class="form-control" type="password" name="password1" placeholder="Enter Password">
+		</div>
+
+		<div class="form-group">
+			<label>rePassword</label>
+			<input class="form-control"  type="password" name="password2" placeholder="Retype Password">
+		</div>
+
+		<div class="form-group">
+			<label>Email</label>
+			<input class="form-control"  type="password" name="email" placeholder="exmaple like: abc@example.com">
+		</div>
+
+		<button type="submit" class="btn btn-primary">Login</button>
+	</form>
+
+</div>	
+
+{% endblock container %}

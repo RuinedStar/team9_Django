@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
+from django.db.models.signals import post_save
 
 # Create your models here.
 
@@ -24,7 +25,7 @@ class Pet(models.Model):
 	icon_tag.allow_tags = True
 
 	def __unicode__(self):
-	    return self.name
+		return self.name
 
 
 class Skill(models.Model):
@@ -32,7 +33,7 @@ class Skill(models.Model):
 	info = models.TextField(default='no description')
 
 	def __unicode__(self):
-	    return self.name
+		return self.name
 
 class Record(models.Model):
 	player = models.ForeignKey(User)
@@ -46,8 +47,21 @@ class Record(models.Model):
 class Prize(models.Model):
 	pet = models.ForeignKey('Pet')
 	weight = models.IntegerField(validators=[MinValueValidator(1),
-		                                     MaxValueValidator(100)])
+											 MaxValueValidator(100)])
 	godfest = models.BooleanField(default = False)
 
 	def __unicode__(self):
 		return self.pet.name + " : " + str(self.weight)
+
+class Profile(models.Model):
+	user = models.OneToOneField(User)
+	cash = models.IntegerField(default=50)
+	
+	def user_post_save(sender, instance, created, **kwargs):
+	#Create a user profile when a new user account is created
+	    if created == True:
+	        p = Profile()
+	        p.user = instance
+	        p.save()
+
+	post_save.connect(user_post_save, sender=User)
