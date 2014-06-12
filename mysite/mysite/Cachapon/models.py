@@ -57,6 +57,9 @@ class Profile(models.Model):
 	user = models.OneToOneField(User)
 	cash = models.IntegerField(default=50)
 	
+	def __unicode__(self):
+		return str(self.cash) + " stone, " + self.user.username
+
 	def user_post_save(sender, instance, created, **kwargs):
 	#Create a user profile when a new user account is created
 	    if created == True:
