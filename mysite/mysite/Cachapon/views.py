@@ -22,9 +22,17 @@ def CachaEgg(request):
 
 @login_required(login_url='/accounts/login/')
 def Shop(request):
+
+	pdict = {"stone0":1, "stone1":6, "stone2":12,"stone3":30,"stone4":60,"stone5":85}
+
+	for key in pdict.keys():
+		if request.POST.get(key) is not None: 
+			break
+
 	c = {}
 	c.update(csrf(request))
-	c["stones"] = request.POST.get("stone")
+	#c["stones"] = request.user.
+	
 	return render_to_response('Cachapon/shop.html', c)
 
 @login_required(login_url='/accounts/login/')
@@ -36,3 +44,4 @@ def LookYourBox(request):
 		pets.append(icon_url)
 
 	return render_to_response('Cachapon/box.html', {'pets' : pets })
+

@@ -7,13 +7,31 @@
 
 		<form action="/Cachapon/shop/" method="post">{% csrf_token %}
 			<table class="table">
-				<tr><td>魔法石</td><td>価格</td><td></td></tr>
-				<tr><td>&nbsp;&nbsp;1　MagicStone</td> <td>NT$30</td><td><button name="stone" type="submit" value="1">購入</button></td></tr>
-				<tr><td>&nbsp;&nbsp;6　MagicStone</td> <td>NT$139</td><td><button name="stone" type="submit" value="6">購入</button></td></tr>
-				<tr><td>12　MagicStone</td> <td>NT$251</td> <td><button name="stone" type="submit" value="12">購入</button></td></tr>
-				<tr><td>30　MagicStone</td> <td>NT$558</td> <td><button name="stone" type="submit" value="30">購入</button></td></tr>
-				<tr><td>60　MagicStone</td> <td>NT$1059</td><td><button name="stone" type="submit" value="60">購入</button></td></tr>
-				<tr><td>85　MagicStone</td> <td>NT$1394</td><td><button name="stone" type="submit" value="85">購入</button></td></tr>
+				<tr><td width=33%>魔法石</td><td width=33%>価格</td><td  width=33%></td></tr>
+
+				<tr><td>&nbsp;&nbsp;1　MagicStone</td> 
+					<td>NT$&nbsp;&nbsp;&nbsp;&nbsp;　30</td>
+					<td><button name="stone0" type="submit" value="{{ quantity.0 }}">購入</button></td></tr>
+
+				<tr><td>&nbsp;&nbsp;6　MagicStone</td>
+					<td>NT$&nbsp;&nbsp;　139</td>
+					<td><button name="stone1" type="submit" value="{{ quantity.1 }}">購入</button></td></tr>
+
+				<tr><td>12　MagicStone</td>
+					<td>NT$&nbsp;&nbsp;　251</td>
+					<td><button name="stone2" type="submit" value="{{ quantity.2 }}">購入</button></td></tr>
+
+				<tr><td>30　MagicStone</td> 
+					<td>NT$&nbsp;&nbsp;　558</td>
+					<td><button name="stone3" type="submit" value="{{ quantity.3 }}">購入</button></td></tr>
+
+				<tr><td>60　MagicStone</td>
+					<td>NT$　1059</td>
+					<td><button name="stone4" type="submit" value="{{ quantity.4 }}">購入</button></td></tr>
+
+				<tr><td>85　MagicStone</td>
+				    <td>NT$　1394</td>
+				    <td><button name="stone5" type="submit" value="{{ quantity.5 }}">購入</button></td></tr>
 			</table>
 		</form>
 
