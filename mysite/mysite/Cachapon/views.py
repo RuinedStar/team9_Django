@@ -15,7 +15,7 @@ def CachaEgg(request):
 		prize = Prize.objects.get(pk=1)
 		record = Record(player = request.user, pet = prize.pet, date = datetime.today())
 		record.save()
-		return HttpResponseRedirect('/Cachapon/bag/')
+		return HttpResponseRedirect('/Cachapon/box/')
 	c = {}
 	c.update(csrf(request))
 	return render_to_response('Cachapon/cacha.html', c)
