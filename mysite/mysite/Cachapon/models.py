@@ -11,7 +11,7 @@ class Pet(models.Model):
 	icon = models.ImageField(upload_to='Cachapon/icons/')
 	picture = models.ImageField(upload_to='Cachapon/pictures/')
 	attribute = models.CharField( max_length=8)
-	rare = models.CharField( max_length=6)
+	rare = models.IntegerField()
 	attack = models.IntegerField()
 	health = models.IntegerField()
 	recover = models.IntegerField()

@@ -1,9 +1,8 @@
-<form action="/Cachapon/cacha/" method="post">
-{% csrf_token %}
-<input type="submit" value="抽蛋"/>
-</form>
-
-
 {% extends "Cachapon/base.html" %}
 
 {% block container %}
+	<form action="/Cachapon/cacha/" method="post">
+	{% csrf_token %}
+	<input type="submit" value="抽蛋"/>
+	</form>
+{% endblock container %}
