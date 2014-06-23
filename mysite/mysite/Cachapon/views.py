@@ -49,11 +49,7 @@ def Shop(request):
 
 @login_required(login_url='/accounts/login/')
 def LookYourBox(request):
-	records = Record.objects.filter(player = request.user)
-	pets = []
-	for record in records:
-		icon_url = "/media/" + str(record.pet.icon)
-		pets.append(icon_url)
+	icons = Record.objects.filter(player = request.user).values_list('pet__icon',flat=True)
 
-	return render_to_response('Cachapon/box.html', {'pets' : pets })
+	return render_to_response('Cachapon/box.html', {'icons' : icons })
 

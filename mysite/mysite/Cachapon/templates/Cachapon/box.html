@@ -3,7 +3,7 @@
 	<div class="container">
 		<div>
 			<table>
-				{% for pet in pets %}
+				{% for icon in icons %}
 
 					{% if forloop.counter0|divisibleby:6 %}
 						<tr>
@@ -11,7 +11,7 @@
 
 					<td style="padding-right:30px; padding-bottom:30px;">
 						<a class="pop" data-toggle="popover" data-placement="top" data-content="No content">
-							<img src="{{ pet }}" class="img-responsive" title=""/>
+							<img src="/media/{{ icon }}" class="img-responsive" title=""/>
 						</a>
 					</td>
 
@@ -22,6 +22,50 @@
 				{% endfor %}
 			</table>
 		</div>
+
+
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		    <div class="modal-dialog">
+		    	<div class="modal-content">
+		      		<div class="modal-header">
+		        		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		        		<h3 class="modal-title">{{ p.name }}</h4>
+		      		</div>
+		      		<div class="modal-body container">
+		      			<img class="img-responsive" src="var">
+		      			<div class="row">
+		      				<div class="col-md-4"><strong><p>聖煌天麒麟・朔夜</p></strong></div>
+		      				<div class="col-md-2"><strong><p>光/光</p></strong></div>
+		      			</div>
+		      			<div class="row">
+		      				<div class="col-md-1"><strong><p>HP:</p></strong></div>
+		      				<div class="col-md-1"><strong><p>3528</p></strong></div>
+		      				<div class="col-md-1"><strong><p>ATK:</p></strong></div>
+		      				<div class="col-md-1"><strong><p>1370</p></strong></div>
+		      				<div class="col-md-1"><strong><p>Rec:</p></strong></div>
+		      				<div class="col-md-1"><strong><p>384</p></strong></div>
+		      			</div>
+		      			<div class="row">
+		      				<div class="col-md-2"><strong><p>主動技能</p></strong></div>
+		      				<div class="col-md-2"><strong><p>四神亂舞</p></strong></div>		      				
+		        		</div>
+		      			<div class="row">
+		      				<div class="col-md-6"><strong><p>對敵方全體造成20%當前HP的傷害，該傷害無視屬性和防禦</p></strong></div>	      				
+		        		</div>		   
+		      			<div class="row">
+		      				<div class="col-md-2"><strong><p>隊長技能</p></strong></div>
+		      				<div class="col-md-2"><strong><p>四源之舞</p></strong></div>		      				
+		        		</div>	
+		      			<div class="row">
+		      				<div class="col-md-6"><strong><p>火，水，木，光中，其中4種同時攻擊時，所有寵物的攻擊力變為5倍。</p></strong></div>	      				
+		        		</div>		        			  
+		      		</div>
+		      		<div class="modal-footer">
+		      		</div>
+		    	</div><!-- /.modal-content -->
+		  	</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
 
 	</div>
 
