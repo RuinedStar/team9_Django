@@ -49,7 +49,9 @@ def Shop(request):
 
 @login_required(login_url='/accounts/login/')
 def LookYourBox(request):
-	icons = Record.objects.filter(player = request.user).values_list('pet__icon',flat=True)
+	icons = Record.objects.filter(player = request.user).values_list('pet__id','pet__icon')
+	ids = Record.objects.filter(player = request.user).values_list('pet',flat=True).distinct()
+	infos = Pet.objects.filter(pk__in=ids)
 
-	return render_to_response('Cachapon/box.html', {'icons' : icons })
+	return render_to_response('Cachapon/box.html', {'icons' : icons, 'infos' : infos})
 

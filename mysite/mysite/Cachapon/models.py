@@ -25,7 +25,7 @@ class Pet(models.Model):
 	icon_tag.allow_tags = True
 
 	def __unicode__(self):
-		return self.name
+		return unicode(self.name)
 
 
 class Skill(models.Model):
