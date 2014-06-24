@@ -1,8 +1,31 @@
 {% extends "Cachapon/base.html" %}
 
 {% block container %}
-	<form action="/Cachapon/cacha/" method="post">
-	{% csrf_token %}
-	<input type="submit" value="抽蛋"/>
-	</form>
+	<div class="container">
+
+		<center>
+			<b>魔法石數量: {{ cashes }}</b><br>
+
+			<h4>
+			{% if error %}
+				{{error}}
+			{% else %}
+				點擊圖片即可轉蛋<br>
+				※每次消耗5個魔法石, 得到一個寵物!
+			{% endif %}
+			</h4>
+			<form action="/Cachapon/cacha/" method="post">
+			{% csrf_token %}
+			{% load staticfiles %}
+			<input type="image" src="{% static "images/dragon.jpg" %}" height=30% width=30%/>
+			</form>
+
+
+			{% if icon %}
+				<p>您抽中了<img src="/media/{{ icon }}" class="img-responsive"/></p> 
+			{% endif %}
+			
+		</center>
+	</div>
+
 {% endblock container %}

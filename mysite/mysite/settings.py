@@ -20,11 +20,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'n+gj2sy125!8p%pn3xh)l3n!+m*60=@dud04-^wu$(s)%qmro0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ruinedstar.pythonanywhere.com']
 
 
 # Application definition
